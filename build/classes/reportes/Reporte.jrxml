@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\ACER\\Documents\\NetBeansProjects\\ProEstudent\\src\\reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     usuario.`nombre` AS usuario_nombre,
+     usuario.`apellido` AS usuario_apellido,
+     usuario.`email` AS usuario_email
+FROM
+     `usuario` usuario]]>
+	</queryString>
+	<field name="usuario_nombre" class="java.lang.String"/>
+	<field name="usuario_apellido" class="java.lang.String"/>
+	<field name="usuario_email" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="90" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="109" height="79"/>
+				<imageExpression class="java.lang.String"><![CDATA["C:\\Users\\ACER\\Desktop\\Imagenes\\icono.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="180" y="7" width="230" height="72" forecolor="#FF9900"/>
+				<textElement>
+					<font size="40"/>
+				</textElement>
+				<text><![CDATA[Usuarios]]></text>
+			</staticText>
+			<image>
+				<reportElement x="435" y="0" width="120" height="88"/>
+				<imageExpression class="java.lang.String"><![CDATA["C:\\Users\\ACER\\Desktop\\Imagenes\\singIn.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="25" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement x="9" y="0" width="123" height="28"/>
+				<textElement>
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="192" y="5" width="127" height="33"/>
+				<textElement>
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[Apellido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="5" width="100" height="28"/>
+				<textElement>
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[Correo Eléctronico]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="9" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{usuario_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="0" width="162" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{usuario_apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="0" width="180" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{usuario_email}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
